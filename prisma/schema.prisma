@@ -1,0 +1,201 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  ADMIN
+  CUSTOMER
+  VENDOR
+}
+
+enum PaymentMethod {
+  ESEWA
+  KHALTI
+  FONEPAY
+  COD
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  AWAITING_COD_CONFIRMATION
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+model User {
+  id           String    @id @default(cuid())
+  phone        String    @unique
+  email        String?   @unique
+  name         String?
+  role         UserRole  @default(CUSTOMER)
+  otpCode      String?
+  otpExpiresAt DateTime?
+  vendor       Vendor?
+  orders       Order[]
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Store {
+  id                String           @id @default(cuid())
+  name              String
+  slug              String           @unique
+  category          String
+  prompt            String
+  city              String
+  district          String
+  currency          String           @default("NPR")
+  primaryColor      String
+  secondaryColor    String
+  accentColor       String
+  languageSupport   String[]
+  seoTitle          String
+  seoDescription    String
+  vatRate           Decimal          @db.Decimal(5, 2)
+  whatsappNumber    String?
+  viberNumber       String?
+  multiVendor       Boolean          @default(false)
+  pwaEnabled        Boolean          @default(true)
+  aiChatbotEnabled  Boolean          @default(false)
+  products          Product[]
+  deliveryZones     DeliveryZone[]
+  vendors           Vendor[]
+  promoCodes        PromoCode[]
+  orders            Order[]
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+}
+
+model Vendor {
+  id               String    @id @default(cuid())
+  name             String
+  slug             String    @unique
+  commissionRate   Decimal   @db.Decimal(5, 2)
+  settlementPolicy String
+  storeId          String
+  ownerId          String    @unique
+  store            Store     @relation(fields: [storeId], references: [id])
+  owner            User      @relation(fields: [ownerId], references: [id])
+  products         Product[]
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  name      String
+  slug      String    @unique
+  storeId   String
+  store     Store     @relation(fields: [storeId], references: [id])
+  products  Product[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Product {
+  id             String       @id @default(cuid())
+  name           String
+  slug           String
+  description    String
+  price          Decimal      @db.Decimal(10, 2)
+  compareAtPrice Decimal?     @db.Decimal(10, 2)
+  sku            String       @unique
+  stock          Int
+  featured       Boolean      @default(false)
+  storeId        String
+  categoryId     String
+  vendorId       String?
+  store          Store        @relation(fields: [storeId], references: [id])
+  category       Category     @relation(fields: [categoryId], references: [id])
+  vendor         Vendor?      @relation(fields: [vendorId], references: [id])
+  variants       Variant[]
+  images         ProductImage[]
+  orderItems     OrderItem[]
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  @@unique([storeId, slug])
+}
+
+model Variant {
+  id         String   @id @default(cuid())
+  name       String
+  value      String
+  productId  String
+  product    Product  @relation(fields: [productId], references: [id])
+}
+
+model ProductImage {
+  id         String   @id @default(cuid())
+  url        String
+  alt        String?
+  productId  String
+  product    Product  @relation(fields: [productId], references: [id])
+}
+
+model DeliveryZone {
+  id         String   @id @default(cuid())
+  city       String
+  district   String
+  fee        Decimal  @db.Decimal(10, 2)
+  etaLabel   String
+  storeId    String
+  store      Store    @relation(fields: [storeId], references: [id])
+}
+
+model PromoCode {
+  id              String    @id @default(cuid())
+  code            String    @unique
+  discountPercent Decimal   @db.Decimal(5, 2)
+  startsAt        DateTime
+  endsAt          DateTime
+  active          Boolean   @default(true)
+  storeId         String
+  store           Store     @relation(fields: [storeId], references: [id])
+}
+
+model Order {
+  id             String         @id @default(cuid())
+  orderNumber    String         @unique
+  status         OrderStatus    @default(PENDING)
+  paymentMethod  PaymentMethod
+  subtotal       Decimal        @db.Decimal(10, 2)
+  vatAmount      Decimal        @db.Decimal(10, 2)
+  deliveryFee    Decimal        @db.Decimal(10, 2)
+  discountAmount Decimal        @db.Decimal(10, 2)
+  totalAmount    Decimal        @db.Decimal(10, 2)
+  city           String
+  district       String?
+  address        String
+  customerName   String
+  customerPhone  String
+  paymentRef     String?
+  courierRef     String?
+  userId         String?
+  storeId        String
+  user           User?          @relation(fields: [userId], references: [id])
+  store          Store          @relation(fields: [storeId], references: [id])
+  items          OrderItem[]
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+}
+
+model OrderItem {
+  id          String   @id @default(cuid())
+  quantity    Int
+  unitPrice   Decimal  @db.Decimal(10, 2)
+  totalPrice  Decimal  @db.Decimal(10, 2)
+  orderId     String
+  productId   String
+  order       Order    @relation(fields: [orderId], references: [id])
+  product     Product  @relation(fields: [productId], references: [id])
+}
