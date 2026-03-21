@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex Ideas Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Munesh AI × Codex</p>
+        <h1>Codex Ideas Board</h1>
+        <p class="hero__copy">
+          A concrete starting point for the 101 idea backlog: grouped, searchable, and prioritized so work can begin immediately.
+        </p>
+        <div class="hero__stats" id="hero-stats"></div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel controls">
+        <div>
+          <label for="search">Search ideas</label>
+          <input id="search" type="search" placeholder="Search by title, group, or use case" />
+        </div>
+
+        <div>
+          <label for="group-filter">Group</label>
+          <select id="group-filter"></select>
+        </div>
+
+        <div>
+          <label for="priority-filter">Priority</label>
+          <select id="priority-filter">
+            <option value="all">All priorities</option>
+            <option value="Now">Now</option>
+            <option value="Next">Next</option>
+            <option value="Later">Later</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Recommended starting points</p>
+            <h2>Top 12 ideas to execute first</h2>
+          </div>
+          <p class="muted">Balanced for fast validation, strong Codex fit, and product leverage.</p>
+        </div>
+        <div class="featured-grid" id="featured-grid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">Execution backlog</p>
+            <h2>All 101 ideas</h2>
+          </div>
+          <p class="muted" id="results-count"></p>
+        </div>
+        <div class="ideas-grid" id="ideas-grid"></div>
+      </section>
+    </main>
+
+    <template id="idea-card-template">
+      <article class="idea-card">
+        <div class="idea-card__top">
+          <span class="idea-card__id"></span>
+          <span class="badge badge--priority"></span>
+        </div>
+        <h3></h3>
+        <p class="idea-card__group"></p>
+        <p class="idea-card__summary"></p>
+        <div class="tag-row">
+          <span class="badge badge--effort"></span>
+          <span class="badge badge--leverage"></span>
+        </div>
+      </article>
+    </template>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
