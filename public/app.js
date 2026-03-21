@@ -11,6 +11,7 @@ const searchInput = document.querySelector('#search');
 const heroStats = document.querySelector('#hero-stats');
 const featuredGrid = document.querySelector('#featured-grid');
 const ideasGrid = document.querySelector('#ideas-grid');
+const paymentGrid = document.querySelector('#payment-grid');
 const resultsCount = document.querySelector('#results-count');
 const cardTemplate = document.querySelector('#idea-card-template');
 
@@ -18,6 +19,7 @@ const state = {
   ideas: [],
   featuredIds: [],
   user: null,
+  paymentProfiles: [],
 };
 
 async function request(url, options = {}) {
@@ -55,6 +57,21 @@ function formatDate(value) {
     dateStyle: 'medium',
     timeStyle: 'short',
   }).format(new Date(value));
+}
+
+function renderPaymentProfiles() {
+  paymentGrid.innerHTML = '';
+
+  state.paymentProfiles.forEach((profile) => {
+    const article = document.createElement('article');
+    article.className = 'payment-card';
+    article.innerHTML = `
+      <p class="payment-provider">${profile.provider}</p>
+      <h3>${profile.user}</h3>
+      <p class="muted">Registered wallet user for ${profile.provider} payment flows.</p>
+    `;
+    paymentGrid.appendChild(article);
+  });
 }
 
 function matchesFilters(idea) {
@@ -158,6 +175,7 @@ function renderIdeas() {
 function renderAll() {
   renderGroupOptions();
   renderStats();
+  renderPaymentProfiles();
   renderFeatured();
   renderIdeas();
 }
@@ -166,6 +184,7 @@ async function loadIdeas() {
   const data = await request('/api/ideas');
   state.ideas = data.ideas;
   state.featuredIds = data.featuredIds;
+  state.paymentProfiles = data.paymentProfiles || [];
   renderAll();
 }
 
@@ -209,6 +228,7 @@ logoutButton.addEventListener('click', async () => {
   state.ideas = [];
   state.featuredIds = [];
   state.user = null;
+  state.paymentProfiles = [];
   appShell.classList.add('hidden');
   authPanel.classList.remove('hidden');
 });

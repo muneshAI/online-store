@@ -8,6 +8,7 @@ This project is now a lightweight **full-stack** idea execution app instead of a
 - Added demo authentication with cookie-based sessions.
 - Added file-backed persistence so idea notes, owners, and statuses survive refreshes and restarts.
 - Upgraded the frontend into a real workspace where ideas can be filtered, assigned, annotated, and saved.
+- Added configured payment-system identities for eSewa and Khalti using `+977 9802100151`.
 
 ## Demo login
 

@@ -22,6 +22,10 @@ const defaultUser = {
 };
 
 const sessions = new Map();
+const paymentProfiles = [
+  { provider: 'eSewa', user: '+977 9802100151' },
+  { provider: 'Khalti', user: '+977 9802100151' },
+];
 
 function ensureDatabase() {
   fs.mkdirSync(STORAGE_DIR, { recursive: true });
@@ -221,7 +225,7 @@ async function handleApi(req, res, pathname) {
     }
 
     const db = readDatabase();
-    sendJson(res, 200, db);
+    sendJson(res, 200, { ...db, paymentProfiles });
     return;
   }
 

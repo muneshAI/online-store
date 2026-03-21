@@ -175,6 +175,7 @@ button:hover {
 .stats-grid,
 .controls-panel,
 .ideas-grid,
+.payment-grid,
 .editor-grid,
 .tag-row {
   display: grid;
@@ -191,6 +192,25 @@ button:hover {
 
 .ideas-grid {
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+
+.payment-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.payment-card {
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 20px;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.85), rgba(15, 23, 42, 0.95));
+}
+
+.payment-provider {
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .idea-card {
