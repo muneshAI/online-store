@@ -1,36 +1,48 @@
-# Codex Ideas Board
+# Codex Ideas OS
 
-This repository now contains a lightweight static starter app that turns the raw 101-item Codex idea list into a concrete working backlog.
+This project is now a lightweight **full-stack** idea execution app instead of a static page.
 
-## What is included
+## What changed
 
-- A searchable idea board grouped by strategic category.
-- A recommended **Top 12** list to start executing first.
-- Priority tags (`Now`, `Next`, `Later`) to help sequence work.
-- Effort and leverage tags so idea selection is more practical.
+- Added a Node.js server that serves the frontend and exposes backend APIs.
+- Added demo authentication with cookie-based sessions.
+- Added file-backed persistence so idea notes, owners, and statuses survive refreshes and restarts.
+- Upgraded the frontend into a real workspace where ideas can be filtered, assigned, annotated, and saved.
+
+## Demo login
+
+By default, use:
+
+- **Email:** `admin@munesh.ai`
+- **Password:** `codex123`
+
+You can override these with environment variables:
+
+```bash
+DEMO_EMAIL=owner@example.com DEMO_PASSWORD=supersecret npm start
+```
 
 ## Run locally
 
-Because this is a static app, you can open `index.html` directly in a browser or serve the folder with a basic web server.
-
-### Example
-
 ```bash
-python3 -m http.server 8000
+npm start
 ```
 
-Then visit `http://localhost:8000`.
+Then open `http://127.0.0.1:8000`.
 
-## Files
+## API endpoints
 
-- `index.html` — page structure.
-- `styles.css` — visual design.
-- `data.js` — idea dataset and featured picks.
-- `app.js` — filtering and rendering logic.
+- `POST /api/login`
+- `POST /api/logout`
+- `GET /api/session`
+- `GET /api/ideas`
+- `PATCH /api/ideas/:id`
 
-## Suggested next steps
+## Persistence
 
-1. Add persistence so ideas can be re-prioritized interactively.
-2. Add export/import to save custom rankings.
-3. Turn featured ideas into clickable detail pages.
-4. Connect the board to a backend for notes, owners, and execution status.
+The app seeds its data from `data/seed.json` and stores live edits in `storage/ideas-db.json`.
+
+## Scripts
+
+- `npm start` — run the server.
+- `npm run check` — syntax check backend and frontend JavaScript.

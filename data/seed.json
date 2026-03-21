@@ -1,0 +1,927 @@
+{
+  "ideas": [
+    {
+      "id": 1,
+      "title": "Auto-generate full APIs from plain English",
+      "group": "Developer Productivity",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Turn natural-language specs into REST endpoints, validation, and starter docs."
+    },
+    {
+      "id": 2,
+      "title": "Convert legacy code to modern frameworks",
+      "group": "Developer Productivity",
+      "priority": "Next",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Upgrade aging stacks into current frameworks with migration guidance and code transforms."
+    },
+    {
+      "id": 3,
+      "title": "Auto-debug entire repositories",
+      "group": "Developer Productivity",
+      "priority": "Now",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Scan projects, surface likely faults, and suggest or apply targeted fixes."
+    },
+    {
+      "id": 4,
+      "title": "Generate unit + integration tests",
+      "group": "Developer Productivity",
+      "priority": "Now",
+      "effort": "Low",
+      "leverage": "High",
+      "summary": "Create broad automated test coverage from existing code and product flows."
+    },
+    {
+      "id": 5,
+      "title": "Refactor messy codebase instantly",
+      "group": "Developer Productivity",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Detect code smells and produce cleaner module boundaries with safer patterns."
+    },
+    {
+      "id": 6,
+      "title": "Auto-document code (README, comments)",
+      "group": "Developer Productivity",
+      "priority": "Now",
+      "effort": "Low",
+      "leverage": "Medium",
+      "summary": "Generate maintainable documentation, usage guides, and inline explanations."
+    },
+    {
+      "id": 7,
+      "title": "Convert Python ↔ JavaScript ↔ Go",
+      "group": "Developer Productivity",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Translate code across languages while preserving behavior and architecture."
+    },
+    {
+      "id": 8,
+      "title": "Find security vulnerabilities",
+      "group": "Developer Productivity",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Audit repositories for insecure patterns, secrets exposure, and dependency risks."
+    },
+    {
+      "id": 9,
+      "title": "Auto-create CI/CD pipelines",
+      "group": "Developer Productivity",
+      "priority": "Now",
+      "effort": "Low",
+      "leverage": "High",
+      "summary": "Generate pipeline configs for testing, builds, deployments, and release checks."
+    },
+    {
+      "id": 10,
+      "title": "Generate database schemas",
+      "group": "Developer Productivity",
+      "priority": "Next",
+      "effort": "Low",
+      "leverage": "High",
+      "summary": "Create normalized schemas, indexes, and migration plans from product requirements."
+    },
+    {
+      "id": 11,
+      "title": "Convert UI design → frontend code",
+      "group": "Developer Productivity",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Translate design systems or mockups into reusable frontend components."
+    },
+    {
+      "id": 12,
+      "title": "Build CLI tools from prompts",
+      "group": "Developer Productivity",
+      "priority": "Now",
+      "effort": "Low",
+      "leverage": "Medium",
+      "summary": "Create useful command-line utilities quickly from concise workflow descriptions."
+    },
+    {
+      "id": 13,
+      "title": "Optimize slow code automatically",
+      "group": "Developer Productivity",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Profile code paths and suggest performance-focused rewrites or caching improvements."
+    },
+    {
+      "id": 14,
+      "title": "Generate GraphQL APIs",
+      "group": "Developer Productivity",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Scaffold GraphQL schema, resolvers, auth hooks, and data layer integration."
+    },
+    {
+      "id": 15,
+      "title": "Write Dockerfiles instantly",
+      "group": "Developer Productivity",
+      "priority": "Now",
+      "effort": "Low",
+      "leverage": "Medium",
+      "summary": "Produce environment-specific container setups with sensible security defaults."
+    },
+    {
+      "id": 16,
+      "title": "Build microservices architecture",
+      "group": "Developer Productivity",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Split business domains into services with communication, deployment, and observability guidance."
+    },
+    {
+      "id": 17,
+      "title": "Auto-create logging systems",
+      "group": "Developer Productivity",
+      "priority": "Next",
+      "effort": "Low",
+      "leverage": "Medium",
+      "summary": "Inject structured logs, tracing hooks, and error-reporting conventions automatically."
+    },
+    {
+      "id": 18,
+      "title": "Code review assistant bot",
+      "group": "Developer Productivity",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Review pull requests for correctness, maintainability, and policy compliance."
+    },
+    {
+      "id": 19,
+      "title": "Merge conflict resolver",
+      "group": "Developer Productivity",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Interpret change intent and generate safer conflict resolutions across branches."
+    },
+    {
+      "id": 20,
+      "title": "Git commit message generator",
+      "group": "Developer Productivity",
+      "priority": "Later",
+      "effort": "Low",
+      "leverage": "Low",
+      "summary": "Summarize diffs into clean commit messages and release-note fragments."
+    },
+    {
+      "id": 21,
+      "title": "Personal automation scripts generator",
+      "group": "Automation & Systems",
+      "priority": "Next",
+      "effort": "Low",
+      "leverage": "Medium",
+      "summary": "Create practical scripts for repetitive local tasks, reporting, and maintenance."
+    },
+    {
+      "id": 22,
+      "title": "Cron-job builder (auto scheduling)",
+      "group": "Automation & Systems",
+      "priority": "Later",
+      "effort": "Low",
+      "leverage": "Medium",
+      "summary": "Compose scheduled jobs with retries, notifications, and environment-aware configs."
+    },
+    {
+      "id": 23,
+      "title": "Desktop automation (file sorting, cleanup)",
+      "group": "Automation & Systems",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Low",
+      "summary": "Automate local desktop operations for cleanup, organization, and repetitive workflows."
+    },
+    {
+      "id": 24,
+      "title": "AI system monitoring tool",
+      "group": "Automation & Systems",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Monitor services, alert on anomalies, and generate plain-language incident summaries."
+    },
+    {
+      "id": 25,
+      "title": "Auto server setup (Linux config generator)",
+      "group": "Automation & Systems",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Produce secure server bootstrapping steps and standardized configuration outputs."
+    },
+    {
+      "id": 26,
+      "title": "DevOps pipeline builder",
+      "group": "Automation & Systems",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Build end-to-end DevOps workflows from source control to release operations."
+    },
+    {
+      "id": 27,
+      "title": "Infrastructure-as-code generator",
+      "group": "Automation & Systems",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Generate Terraform or similar templates for repeatable cloud infrastructure setup."
+    },
+    {
+      "id": 28,
+      "title": "Auto cloud deployment scripts",
+      "group": "Automation & Systems",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Create deploy scripts and rollout guardrails across cloud providers."
+    },
+    {
+      "id": 29,
+      "title": "Web scraping engine builder",
+      "group": "Automation & Systems",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Generate robust scraping foundations, selectors, retries, and export flows."
+    },
+    {
+      "id": 30,
+      "title": "Data pipeline generator",
+      "group": "Automation & Systems",
+      "priority": "Next",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Build ingestion, transformation, and delivery pipelines from simple source/target specs."
+    },
+    {
+      "id": 31,
+      "title": "Auto email responder system",
+      "group": "Automation & Systems",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Automate email handling, triage, summaries, and template generation."
+    },
+    {
+      "id": 32,
+      "title": "File backup + restore automation",
+      "group": "Automation & Systems",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Create versioned backup and recovery workflows for critical local or cloud data."
+    },
+    {
+      "id": 33,
+      "title": "Smart task scheduler",
+      "group": "Automation & Systems",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Optimize task timing based on deadlines, dependencies, and system load."
+    },
+    {
+      "id": 34,
+      "title": "Code-based chatbot builder",
+      "group": "Automation & Systems",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Scaffold domain-specific chatbots backed by APIs, retrieval, or business rules."
+    },
+    {
+      "id": 35,
+      "title": "AI-powered API tester",
+      "group": "Automation & Systems",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Generate test cases, edge cases, and diagnostics for HTTP and RPC APIs."
+    },
+    {
+      "id": 36,
+      "title": "Log analyzer + error predictor",
+      "group": "Automation & Systems",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Extract patterns from logs and surface likely future outages or regression hotspots."
+    },
+    {
+      "id": 37,
+      "title": "Automated bug reproduction scripts",
+      "group": "Automation & Systems",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Create reproducible scripts from issues, stack traces, and user descriptions."
+    },
+    {
+      "id": 38,
+      "title": "Browser automation bot",
+      "group": "Automation & Systems",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Build workflow automation for browser-based tasks, testing, and ops."
+    },
+    {
+      "id": 39,
+      "title": "IoT automation scripts",
+      "group": "Automation & Systems",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Low",
+      "summary": "Generate event-based control scripts for sensors, devices, and automations."
+    },
+    {
+      "id": 40,
+      "title": "Smart notification engine",
+      "group": "Automation & Systems",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Deliver alerting rules, routing, throttling, and context-rich notifications."
+    },
+    {
+      "id": 41,
+      "title": "No-code app builder (prompt → app)",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Convert product prompts into working apps with forms, auth, and data models."
+    },
+    {
+      "id": 42,
+      "title": "AI website generator (like Wix on steroids)",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Create brand-aware websites with layout, content, and publishing workflows."
+    },
+    {
+      "id": 43,
+      "title": "SaaS MVP generator in minutes",
+      "group": "App & SaaS Ideas",
+      "priority": "Next",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Assemble quick SaaS starters including billing, auth, admin, and analytics."
+    },
+    {
+      "id": 44,
+      "title": "Resume-to-portfolio generator",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "Low",
+      "leverage": "Low",
+      "summary": "Turn a resume into a polished portfolio site with projects and branding."
+    },
+    {
+      "id": 45,
+      "title": "AI business dashboard builder",
+      "group": "App & SaaS Ideas",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Create business dashboards from uploaded data models and KPI definitions."
+    },
+    {
+      "id": 46,
+      "title": "CRM generator for companies",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Produce CRMs tailored to workflows, fields, permissions, and reporting needs."
+    },
+    {
+      "id": 47,
+      "title": "HR management system builder",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Generate HR platforms covering onboarding, approvals, documents, and records."
+    },
+    {
+      "id": 48,
+      "title": "Booking system generator",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Build scheduling products with calendars, availability, and reminders."
+    },
+    {
+      "id": 49,
+      "title": "E-commerce store generator",
+      "group": "App & SaaS Ideas",
+      "priority": "Next",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Create storefronts with catalog, cart, checkout, and operational tooling."
+    },
+    {
+      "id": 50,
+      "title": "Subscription platform builder",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Scaffold recurring-billing products with entitlements and account management."
+    },
+    {
+      "id": 51,
+      "title": "AI landing page generator",
+      "group": "App & SaaS Ideas",
+      "priority": "Next",
+      "effort": "Low",
+      "leverage": "Medium",
+      "summary": "Generate high-converting landing pages with content, sections, and calls to action."
+    },
+    {
+      "id": 52,
+      "title": "Blogging platform generator",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Low",
+      "summary": "Create content platforms with authoring, publishing, SEO, and media handling."
+    },
+    {
+      "id": 53,
+      "title": "Internal tools builder",
+      "group": "App & SaaS Ideas",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Rapidly generate admin panels and business workflows from table or process specs."
+    },
+    {
+      "id": 54,
+      "title": "SaaS boilerplate generator",
+      "group": "App & SaaS Ideas",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Deliver reusable starters for auth, billing, dashboards, and deployment."
+    },
+    {
+      "id": 55,
+      "title": "Marketplace builder",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Generate multi-vendor systems with listings, payments, and moderation."
+    },
+    {
+      "id": 56,
+      "title": "Chat app generator",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Scaffold messaging apps with rooms, presence, notifications, and persistence."
+    },
+    {
+      "id": 57,
+      "title": "AI-based survey tool",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Low",
+      "summary": "Generate survey products with analytics, logic rules, and shareable reports."
+    },
+    {
+      "id": 58,
+      "title": "Online course platform generator",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Create education platforms with lessons, progress tracking, and assessments."
+    },
+    {
+      "id": 59,
+      "title": "AI-powered CMS builder",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Build flexible content systems with schema generation and editorial tooling."
+    },
+    {
+      "id": 60,
+      "title": "Startup idea → full app builder",
+      "group": "App & SaaS Ideas",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Transform business ideas into end-to-end product skeletons ready for refinement."
+    },
+    {
+      "id": 61,
+      "title": "Build games from text prompts",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Low",
+      "summary": "Generate game loops, assets wiring, and scenes from imaginative descriptions."
+    },
+    {
+      "id": 62,
+      "title": "Snake / Tetris generator",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "Low",
+      "leverage": "Low",
+      "summary": "Create retro game variants for demos, learning, or promotional experiences."
+    },
+    {
+      "id": 63,
+      "title": "3D game prototype builder",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Low",
+      "summary": "Scaffold quick 3D concept demos with controls, environments, and interactions."
+    },
+    {
+      "id": 64,
+      "title": "AI NPC dialogue generator",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Low",
+      "summary": "Produce character dialogue trees and dynamic responses for games."
+    },
+    {
+      "id": 65,
+      "title": "Game level generator",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Low",
+      "summary": "Design levels and progression structures from mechanics and difficulty targets."
+    },
+    {
+      "id": 66,
+      "title": "Physics simulation builder",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Low",
+      "summary": "Generate interactive simulations for experimentation, teaching, or demos."
+    },
+    {
+      "id": 67,
+      "title": "Interactive storytelling engine",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Low",
+      "summary": "Create branching narratives with state tracking and adaptive plot paths."
+    },
+    {
+      "id": 68,
+      "title": "Voice-controlled game",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Low",
+      "summary": "Build a game interface driven by speech commands and lightweight intent handling."
+    },
+    {
+      "id": 69,
+      "title": "AR/VR demo generator",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Low",
+      "summary": "Scaffold immersive experience demos with scenes, objects, and interactions."
+    },
+    {
+      "id": 70,
+      "title": "Animation generator",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Low",
+      "summary": "Generate animated experiences and timelines from storyboards or prompts."
+    },
+    {
+      "id": 71,
+      "title": "AI music visualizer",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Low",
+      "summary": "Create responsive audiovisual demos synchronized to uploaded audio tracks."
+    },
+    {
+      "id": 72,
+      "title": "Meme generator app",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "Low",
+      "leverage": "Low",
+      "summary": "Build a playful captioning and image-composition app for rapid sharing."
+    },
+    {
+      "id": 73,
+      "title": "AI comic creator",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Low",
+      "summary": "Produce comic panels, dialogue, and layout suggestions from story prompts."
+    },
+    {
+      "id": 74,
+      "title": "Procedural world generator",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Low",
+      "summary": "Generate terrain, biomes, and world-building systems programmatically."
+    },
+    {
+      "id": 75,
+      "title": "Gamified learning app",
+      "group": "Fun + Creative + Gaming",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Turn education flows into progression systems with quizzes and rewards."
+    },
+    {
+      "id": 76,
+      "title": "Compliance automation system",
+      "group": "Business + Enterprise Tools",
+      "priority": "Next",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Automate evidence collection, policy mapping, and audit preparation workflows."
+    },
+    {
+      "id": 77,
+      "title": "Legal document generator",
+      "group": "Business + Enterprise Tools",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Draft legal templates with clause controls and review-ready structure."
+    },
+    {
+      "id": 78,
+      "title": "Financial report generator",
+      "group": "Business + Enterprise Tools",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Generate recurring financial reports from source data and reporting logic."
+    },
+    {
+      "id": 79,
+      "title": "Tax calculation engine",
+      "group": "Business + Enterprise Tools",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Build tax logic and filing support tooling with jurisdiction-aware calculations."
+    },
+    {
+      "id": 80,
+      "title": "Contract analyzer",
+      "group": "Business + Enterprise Tools",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Extract obligations, risks, and clauses from contracts for quick review."
+    },
+    {
+      "id": 81,
+      "title": "Business intelligence dashboards",
+      "group": "Business + Enterprise Tools",
+      "priority": "Next",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Generate BI experiences with metrics, drilldowns, and role-based views."
+    },
+    {
+      "id": 82,
+      "title": "Sales pipeline generator",
+      "group": "Business + Enterprise Tools",
+      "priority": "Later",
+      "effort": "Medium",
+      "leverage": "Medium",
+      "summary": "Build sales tracking workflows with forecasting, tasks, and team reporting."
+    },
+    {
+      "id": 83,
+      "title": "Inventory management system",
+      "group": "Business + Enterprise Tools",
+      "priority": "Next",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Create stock, purchasing, and replenishment systems for physical goods operations."
+    },
+    {
+      "id": 84,
+      "title": "Procurement system builder",
+      "group": "Business + Enterprise Tools",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Scaffold procurement workflows from request intake to vendor management."
+    },
+    {
+      "id": 85,
+      "title": "Risk analysis engine",
+      "group": "Business + Enterprise Tools",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Model business or operational risk scoring with configurable dimensions."
+    },
+    {
+      "id": 86,
+      "title": "Meeting notes → action system",
+      "group": "Business + Enterprise Tools",
+      "priority": "Now",
+      "effort": "Low",
+      "leverage": "High",
+      "summary": "Convert transcripts or notes into clear owners, deadlines, and follow-ups."
+    },
+    {
+      "id": 87,
+      "title": "AI-powered ERP generator",
+      "group": "Business + Enterprise Tools",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Assemble integrated enterprise workflows across finance, ops, and HR domains."
+    },
+    {
+      "id": 88,
+      "title": "Telecom workflow automation",
+      "group": "Business + Enterprise Tools",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Generate tooling for telecom operations, tickets, service workflows, and escalations."
+    },
+    {
+      "id": 89,
+      "title": "Customer support automation system",
+      "group": "Business + Enterprise Tools",
+      "priority": "Now",
+      "effort": "Medium",
+      "leverage": "High",
+      "summary": "Automate ticket triage, knowledge reuse, and response drafting across channels."
+    },
+    {
+      "id": 90,
+      "title": "Proposal generator",
+      "group": "Business + Enterprise Tools",
+      "priority": "Next",
+      "effort": "Low",
+      "leverage": "Medium",
+      "summary": "Turn client requirements into polished proposals, timelines, and pricing drafts."
+    },
+    {
+      "id": 91,
+      "title": "AI coding agent that builds apps autonomously",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Orchestrate planning, implementation, review, and deployment loops with minimal human input."
+    },
+    {
+      "id": 92,
+      "title": "Self-healing software (auto-fixes bugs)",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Detect runtime or test failures and safely ship patches after verification."
+    },
+    {
+      "id": 93,
+      "title": "AI operating system (natural language controlled)",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Coordinate local and cloud actions through conversational system control."
+    },
+    {
+      "id": 94,
+      "title": "Prompt-to-startup generator",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Bundle market framing, product scope, stack, and launch assets from one prompt."
+    },
+    {
+      "id": 95,
+      "title": "Multi-agent developer team simulator",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Next",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Simulate PM, designer, developer, QA, and ops collaboration inside one agentic system."
+    },
+    {
+      "id": 96,
+      "title": "AI that rewrites itself (meta-programming)",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Experiment with self-improving code transformations under strict safety boundaries."
+    },
+    {
+      "id": 97,
+      "title": "Voice-to-full-app builder",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Turn spoken product requests into generated applications and change sets."
+    },
+    {
+      "id": 98,
+      "title": "Autonomous SaaS business builder",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Coordinate ideation, build, growth, support, and optimization workflows continuously."
+    },
+    {
+      "id": 99,
+      "title": "AI CTO (makes tech decisions)",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "Medium",
+      "summary": "Recommend architecture, sequencing, and tradeoffs for product and platform evolution."
+    },
+    {
+      "id": 100,
+      "title": "One prompt → full company system",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Later",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Create connected systems spanning product, ops, support, analytics, and finance."
+    },
+    {
+      "id": 101,
+      "title": "Your own Codex-powered platform (Munesh AI OS)",
+      "group": "Next-Level (Munesh AI Tier)",
+      "priority": "Now",
+      "effort": "High",
+      "leverage": "High",
+      "summary": "Build a unifying platform that packages the strongest ideas into one extensible operating system."
+    }
+  ],
+  "featuredIds": [
+    101,
+    1,
+    4,
+    8,
+    9,
+    18,
+    24,
+    35,
+    37,
+    53,
+    86,
+    88
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "codex-ideas-os",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack Codex ideas execution board with authentication and persistence.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check public/app.js"
+  }
+}
