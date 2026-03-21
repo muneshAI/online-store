@@ -47,3 +47,29 @@ The app seeds its data from `data/seed.json` and stores live edits in `storage/i
 
 - `npm start` — run the server.
 - `npm run check` — syntax check backend and frontend JavaScript.
+
+
+## Put it on the internet
+
+This local sandbox cannot publish a permanent public URL by itself, but the project is now ready to deploy.
+
+### Fastest option: Render
+
+1. Push this repository to GitHub.
+2. Sign in to Render.
+3. Create a new **Blueprint** or **Web Service** from the repo.
+4. Render will detect `render.yaml` and use:
+   - `npm install` as the build command
+   - `npm start` as the start command
+5. After deploy, Render will give you a public URL such as `https://codex-ideas-os.onrender.com`.
+
+### Docker option
+
+You can also deploy anywhere that supports Docker:
+
+```bash
+docker build -t codex-ideas-os .
+docker run -p 8000:8000 codex-ideas-os
+```
+
+Then deploy that container to Render, Railway, Fly.io, or any VPS.
