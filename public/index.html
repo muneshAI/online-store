@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex Ideas OS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel auth-panel" id="auth-panel">
+        <div>
+          <p class="eyebrow">Munesh AI × Codex</p>
+          <h1>Codex Ideas OS</h1>
+          <p class="hero-copy">
+            A real app starter with backend APIs, login, session management, and persisted execution tracking for the 101-idea backlog.
+          </p>
+        </div>
+
+        <form id="login-form" class="login-card">
+          <h2>Sign in to continue</h2>
+          <p class="muted">Use the demo credentials shown below or override them with environment variables.</p>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" value="admin@munesh.ai" required />
+
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" value="codex123" required />
+
+          <button type="submit">Sign in</button>
+          <p class="muted tiny">Default demo login: <strong>admin@munesh.ai / codex123</strong></p>
+          <p class="error" id="login-error"></p>
+        </form>
+      </section>
+
+      <section class="app-shell hidden" id="app-shell">
+        <header class="panel hero-panel">
+          <div>
+            <p class="eyebrow">Execution workspace</p>
+            <h1>Launch the right Codex idea next</h1>
+            <p class="hero-copy">
+              Prioritize, assign, and annotate ideas with data persisted on the backend so this becomes a true working backlog instead of a static inspiration page.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <div class="user-chip" id="user-chip"></div>
+            <button class="ghost-button" id="logout-button" type="button">Logout</button>
+          </div>
+        </header>
+
+        <section class="panel stats-panel">
+          <div id="hero-stats" class="stats-grid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Payment systems</p>
+              <h2>Configured payout identities</h2>
+            </div>
+            <p class="muted">Use these accounts when wiring checkout or wallet-based payment flows.</p>
+          </div>
+          <div id="payment-grid" class="payment-grid"></div>
+        </section>
+
+        <section class="panel controls-panel">
+          <div>
+            <label for="search">Search ideas</label>
+            <input id="search" type="search" placeholder="Search by title, group, owner, or notes" />
+          </div>
+          <div>
+            <label for="group-filter">Group</label>
+            <select id="group-filter"></select>
+          </div>
+          <div>
+            <label for="priority-filter">Priority</label>
+            <select id="priority-filter">
+              <option value="all">All priorities</option>
+              <option value="Now">Now</option>
+              <option value="Next">Next</option>
+              <option value="Later">Later</option>
+            </select>
+          </div>
+          <div>
+            <label for="status-filter">Execution status</label>
+            <select id="status-filter">
+              <option value="all">All statuses</option>
+              <option value="Ready">Ready</option>
+              <option value="Planned">Planned</option>
+              <option value="Building">Building</option>
+              <option value="Backlog">Backlog</option>
+              <option value="Launched">Launched</option>
+            </select>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Highest leverage now</p>
+              <h2>Featured launch tracks</h2>
+            </div>
+            <p class="muted">These picks come from the backend seed and can be updated later.</p>
+          </div>
+          <div class="ideas-grid" id="featured-grid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Working backlog</p>
+              <h2>All 101 ideas</h2>
+            </div>
+            <p class="muted" id="results-count"></p>
+          </div>
+          <div class="ideas-grid" id="ideas-grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <template id="idea-card-template">
+      <article class="idea-card">
+        <div class="idea-header">
+          <span class="idea-id"></span>
+          <span class="badge badge-priority"></span>
+        </div>
+        <h3 class="idea-title"></h3>
+        <p class="idea-group"></p>
+        <p class="idea-summary"></p>
+        <div class="tag-row">
+          <span class="badge badge-effort"></span>
+          <span class="badge badge-leverage"></span>
+        </div>
+        <div class="editor-grid">
+          <label>
+            Status
+            <select class="status-select">
+              <option value="Ready">Ready</option>
+              <option value="Planned">Planned</option>
+              <option value="Building">Building</option>
+              <option value="Backlog">Backlog</option>
+              <option value="Launched">Launched</option>
+            </select>
+          </label>
+          <label>
+            Owner
+            <input class="owner-input" type="text" maxlength="80" placeholder="Assign an owner" />
+          </label>
+        </div>
+        <label>
+          Notes
+          <textarea class="notes-input" rows="4" maxlength="400" placeholder="Capture execution notes, constraints, or the next milestone"></textarea>
+        </label>
+        <div class="card-footer">
+          <small class="updated-at"></small>
+          <button class="save-button" type="button">Save</button>
+        </div>
+      </article>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
