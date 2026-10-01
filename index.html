@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="S&M Marketplace — everyday elegance, kurtas, salwar suits, sarees and accessories across Nepal.">
+  <title>S&M Marketplace — Style That Feels Like You</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#"><span class="brand-mark">S&M</span><span>Marketplace</span></a>
+  <nav>
+    <a href="#shop">Shop</a><a href="#track">Track order</a><a href="#bulk">Wholesale</a>
+  </nav>
+  <button class="cart-button" id="cartBtn">Cart <span id="cartCount">0</span></button>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">S&M Collection</p>
+    <h1>Deals on everyday elegance.</h1>
+    <p class="hero-copy">Kurtas, salwar suits, sarees and accessories selected for effortless everyday style.</p>
+    <div class="hero-actions"><a class="button primary" href="#shop">Shop deals</a><a class="button secondary" href="#bulk">Wholesale & bulk</a></div>
+    <p class="shipping-note">Free delivery over NPR 5,000 · Cash on delivery across Nepal</p>
+  </div>
+  <div class="hero-card"><div class="hero-art">S&M</div><div><strong>Style That Feels Like You</strong><small>New arrivals • Everyday collection</small></div></div>
+</section>
+
+<section id="shop" class="shop">
+  <div class="section-head"><div><p class="eyebrow">Shop</p><h2>Find your style</h2></div><div class="controls"><input id="search" placeholder="Search products…"><select id="sort"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="rating">Top rated</option></select></div></div>
+  <div class="chips" id="chips"></div>
+  <div class="product-grid" id="products"></div>
+</section>
+
+<section id="track" class="service-card">
+  <div><p class="eyebrow">Track your order</p><h2>Where is my order?</h2><p>Enter your order number to request the latest status.</p></div>
+  <form id="trackForm" class="inline-form"><input id="orderNo" required placeholder="e.g. SM-10025"><button class="button primary">Track</button></form>
+  <div id="trackResult" class="track-result" hidden></div>
+</section>
+
+<section id="bulk" class="service-card wholesale">
+  <div><p class="eyebrow">Wholesale & bulk orders</p><h2>Buying for your shop or group?</h2><p>Send us your quantity and preferred categories. We’ll respond with availability and a bulk quote.</p></div>
+  <form id="bulkForm" class="bulk-form">
+    <input id="bulkName" required placeholder="Your name">
+    <input id="bulkPhone" required placeholder="Phone / WhatsApp">
+    <select id="bulkCategory"><option>Kurtas</option><option>Salwar Suits</option><option>Sarees</option><option>Accessories</option></select>
+    <input id="bulkQty" type="number" min="1" required placeholder="Approx. quantity">
+    <textarea id="bulkMessage" placeholder="Notes (sizes, colors, delivery area…)"></textarea>
+    <button class="button primary">Request wholesale quote</button>
+  </form>
+</section>
+</main>
+
+<footer><strong>S&M Collection</strong><span>Style That Feels Like You</span><span>Shipping · Returns · Privacy · Terms</span><a href="https://wa.me/" target="_blank" rel="noreferrer">Chat on WhatsApp</a></footer>
+
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-head"><h2>Your cart</h2><button id="closeCart">×</button></div>
+  <div id="cartItems"></div>
+  <div class="cart-total"><span>Total</span><strong id="cartTotal">NPR 0</strong></div>
+  <button class="button primary full" id="checkoutBtn">Order via WhatsApp</button>
+  <p class="micro">Cash on delivery available across Nepal.</p>
+</aside>
+<div class="overlay" id="overlay"></div>
+<script src="app.js"></script>
+</body>
+</html>
